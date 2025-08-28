@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap");
+/*   Sass Template   */
+/* global classes */
+
+/*  linear gradient that starts from the left. 
+    It starts fully transparent, transitioning to full color red: */
+body {
+  /* background-image: linear-gradient(to right, lightgreen, darkgreen); */
+  background-color: black;  /* --apm add */
+}
+
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+/* typography classes */
+.font-baloo {
+  font-family: "Baloo Thambi 2", cursive;
+}
+
+.font-rale {
+  font-family: "Raleway", cursive;
+}
+
+.font-rubik {
+  font-family: "Rubik", cursive;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.font-size-25 {
+  font-size: 25px;
+}
+
+/* Color Template */
+.color-primary {
+  color: #003859;
+}
+
+.color-primary-bg {
+  background: #003859;
+}
+
+.color-second {
+  color: #00A5C4;
+}
+
+.color-second-bg {
+  background: #00A5C4;
+}
+
+.color-yellow {
+  color: #FFD289;
+}
+
+.color-yellow-bg {
+  background: #FFD289;
+}
+
+/* top sale template */
+#top-sale {
+  /* left arrow "<" nav button of Owl Carousel */
+  /* right arrow ">" nav button of Owl Carousel */
+}
+#top-sale .owl-carousel .item .product a {
+  overflow: hidden;
+}
+#top-sale .owl-carousel .item .product img {
+  transition: transform 0.5s ease;
+  border-radius: 25px !important;
+}
+#top-sale .owl-carousel .item .product img:hover {
+  transform: scale(1.15);
+}
+#top-sale .owl-carousel .owl-nav button {
+  position: absolute;
+  top: 30%;
+  outline: none;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev span {
+  font-size: 60px;
+  color: gray; /* #003859 */
+  margin-left: -4rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  /* 0 padding T & B, 1 rem padding L & R */
+}
+#top-sale .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+  font-size: 60px;
+  color: gray; /* #003859 */
+  margin-right: -4rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  /* 0 padding T & B, 1 rem padding L & R */
+}
+
+/* Special Price Section template */
+/* add a top and right margin to the Special Price items */
+#special-price .grid .grid-item {
+  margin-right: 1.2rem;
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* Modal Popup Section */
+.bg-modal {
+  /* cover 100% of the screen with a black background */
+  width: 100%;    
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* opacity = 0.7 */
+  position: absolute;
+  top: 0;
+  display: flex; /* flex panel */
+  justify-content: center; /* center items horizontally in flex panel */
+  align-items: center; /* center items vertically in flex panel */
+  display: none;
+}
+
+/* modal-content for IFRAME occupies 100% of screen */
+.modal-content {
+  /* the box that will sit over the black background */
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center; /* everything inside "modal-content" is centralized */
+  padding: 10px;
+  position: relative; /* position all children relative to me */
+}
+
+/* CSS for the "X" button */
+.close-modal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  transform: rotate(45deg); /* rotate "+" 45 degrees */
+  cursor: pointer; /* cursor changes to hand on hover */
+}
+
+/* make iFrame embedded in ".modal-content" occupy 100% */
+.divIframe iframe {
+  position:absolute;
+  top:10%;
+  left:0;
+  width:100%;
+  height:100%;
+  padding: 5px;
+}
+
+/* make Video embedded in ".modal-content" occupy 320px by 240px */
+#divVideo video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  height: 480px;
+  width: 640px;
+}
