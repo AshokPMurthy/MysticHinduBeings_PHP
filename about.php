@@ -14,8 +14,7 @@
                     It's purpose is to introduce their children to Mystic Hindu Beings.
                     <br />&nbsp;<br />
                     
-                    Clicking on the <a class="btn btn-outline-secondary btn-sm park">Details</a> 
-                    button will popup a window with more information about the being.
+                    Clicking on each Image will popup a window with more information about the being.
                     <br />&nbsp;<br />
                     
                     <div class="text-center">
