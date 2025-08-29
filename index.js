@@ -72,67 +72,27 @@ $(document).ready(function() {
         }
     });
 
-    // "Go to Site" button clicked; Redirect to URL of Park in "Modal"
-    $('.park').click(function() {
-        // get the data-attributes
-        var url = $(this).data("url");
-        var caption = $(this).data("caption");
-        //alert("url : " + url + "  caption : " + caption);
+    // "OwlCarousel" item clicked; display the "data-" attributes in the "modal".
+    $('.btn-main').click(function() {
 
-        // show the modal
-        $('.bg-modal').show();
-        
-        // Hide the "Video" control
-        $('#divVideo video').hide();
-
-        // Show the "iFrame" control
-        $('.divIframe').show();
-
-        // show the "park_url" that was clicked in the "iFrame"
-        $('#frame').attr("src", url);
-
-        // hide the carousel, so that it WONT shine thru the park.
-        $('.owl-carousel').hide();
-    });
-
-    // "View Document" button clicked; Show "mp4" of Document in "Modal"
-    $('.doc').click(function() {
         // get the data-attributes
         var url = $(this).data("url");
         var title = $(this).data("title");
-        //alert("url : " + url + "  title : " + title);
-
-        // show the modal
-        $('.bg-modal').show();
+        var desc = $(this).data("desc");
+        //alert("url : " + url + "  title : " + title + "  desc : " + desc);
         
-        // Show the "Video" control
-        $('#divVideo video').show();
+        // Get the modal title
+        const modalTitle = document.getElementById('exampleModalTitle');
+        modalTitle.textContent = title; // Output: Modal Title
+        modalTitle.setAttribute('style','font-weight:bold; margin-left:370px;');
 
-        // Hide the "iFrame" control
-        $('.divIframe').hide();
-        
-        // load the url with mp4 in the "video"
-        var $video = $('#divVideo video');
-        videoSrc = $('source', $video).attr('src', url);
-        $video[0].load();
-        $video[0].play();
+        // Get the "img" inside modal body
+        const modalImage = document.getElementById('exampleModalImage');
+        modalImage.src = url;
 
-        // hide the carousel, so that it WONT shine thru the park.
-        $('.owl-carousel').hide();
-    });
-
-    // Whenever a "X" button is clicked. Hide "Modal"
-    $('.close-modal').click(function() {
-        //alert('close-modal button clicked');
-
-        // hide the modal
-        $('.bg-modal').hide();
-
-        // show the carousel
-        $('.owl-carousel').show();
-
-        // reload page, so you can dismiss black overlay
-        location.reload();
+        // Get the "h4" inside modady body
+        const modalDesc = document.getElementById('exampleModalDesc');
+        modalDesc.textContent = desc; // Output: description
     });
 
 

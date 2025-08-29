@@ -52,4 +52,37 @@
             echo $e->getMessage();
         }
     }//end- function get_beings_by_name($name)
+
+    
+
+    // gets the "Mystic Being" with the incoming "id"
+    function get_being_by_id($id)
+    {
+        try {
+            global $pdo;
+            $beings = [];
+
+            $sql = "SELECT * FROM tbl_MysticHinduBeings WHERE id = :id ";
+
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->execute([':id' => $id]);
+
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $beings[] = [
+                    'id'        => $row['id'],
+                    'name'      => $row['name'],
+                    'description'     => $row['description'],
+                    'imageurl' => $row['imageurl']
+                ];
+            }
+
+            //var_dump($beings);
+            return $beings;
+
+        } catch(\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }//end- function get_being_by_id($id)
+    
 ?>
