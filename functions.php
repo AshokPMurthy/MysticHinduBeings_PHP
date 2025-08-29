@@ -9,7 +9,7 @@
             $names = [];
 
             $stmt = $pdo->query(('SELECT DISTINCT name FROM tbl_MysticHinduBeings ORDER BY name'));
-            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $names[] = [
                     'name' => $row['name']
                 ];
@@ -17,7 +17,7 @@
             //var_dump($names);
             return $names;
 
-        } catch(\PDOException $e) {
+        } catch(PDOException $e) {
             echo $e->getMessage();
         }
     }//end- function get_unique_names()
@@ -36,7 +36,7 @@
 
             $stmt->execute([':name' => $name]);
 
-            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $beings[] = [
                     'id'        => $row['id'],
                     'name'      => $row['name'],
@@ -48,7 +48,7 @@
             //var_dump($beings);
             return $beings;
 
-        } catch(\PDOException $e) {
+        } catch(PDOException $e) {
             echo $e->getMessage();
         }
     }//end- function get_beings_by_name($name)
@@ -68,7 +68,7 @@
 
             $stmt->execute([':id' => $id]);
 
-            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $beings[] = [
                     'id'        => $row['id'],
                     'name'      => $row['name'],
@@ -80,7 +80,7 @@
             //var_dump($beings);
             return $beings;
 
-        } catch(\PDOException $e) {
+        } catch(PDOException $e) {
             echo $e->getMessage();
         }
     }//end- function get_being_by_id($id)
